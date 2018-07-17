@@ -2,6 +2,8 @@
 Plugin for OpenHab, implementing support for CometBlue devices made by Eurotronic.
 See fork of original opensource project [cometblue](https://github.com/xrucka/cometblue).
 
+This is stil WORK IN PROGRESS, use at own risk. Expect massive rewrites.
+
 ## Prerequisites
 1. bluetooth-gatt-parser (build locally with latest pullrequests and set version to 1.9.3-SNAPSHOT)
 2. eclipse-smarthome-bluetooth-binding (with above mentined gatt parser and latest pullrequests)
