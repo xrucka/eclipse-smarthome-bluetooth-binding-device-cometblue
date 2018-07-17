@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd" 
+                name="Temperature Program for Fridays"
+                type="org.eurotronic.cometblue.characteristic.program_friday"
+                uuid="47E9EE14" 
+                last-modified="2018-06-11" approved="no">
+    <InformativeText>
+        <Abstract>Valve heating program to deploy on fridays</Abstract>
+    </InformativeText>
+    <Value>
+        <Field name="Friday Auto Heating Program">
+            <InformativeText>
+                <Abstract>
+                    List of heating intervals, max 4., form: "[00:00-10:00; 12:00-15:00, 18:00-19:30, 20:00-21:00]"
+                </Abstract>
+                <InformativeDisclaimer>
+                    Step is 10 minutes.
+                </InformativeDisclaimer>
+            </InformativeText>
+            <Requirement>Mandatory</Requirement>
+            <Format>utf8s</Format>
+        </Field>
+    </Value>
+</Characteristic>

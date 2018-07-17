@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd" 
+                name="Valve Status"
+                type="org.eurotronic.cometblue.characteristic.valve_status"
+                uuid="47E9EE2A" 
+                last-modified="2018-02-01" approved="no">
+    <InformativeText>
+        <Abstract>Status descriptor of the device. Can be used to set device modes.</Abstract>
+    </InformativeText>
+    <Value>
+        <Field name="Control">
+            <InformativeText>
+                <Abstract>
+                    This field controls the operation modes of the valve.
+                </Abstract>
+            </InformativeText>
+            <Requirement>Mandatory</Requirement>
+            <Format>uint8</Format>
+            <BitField>
+                <Bit index="0" size="1" name="Manual Temperature Control">
+                    <Enumerations>
+                        <Enumeration key="0" value="False" />
+                        <Enumeration key="1" value="True" />
+                    </Enumerations>
+                </Bit>
+                <Bit index="4" size="1" name="Antifrost Protection Operation">
+                    <Enumerations>
+                        <Enumeration key="0" value="False" />
+                        <Enumeration key="1" value="True" />
+                    </Enumerations>
+                </Bit>
+                <Bit index="7" size="1" name="Child Lock Enabled">
+                    <Enumerations>
+                        <Enumeration key="0" value="False" />
+                        <Enumeration key="1" value="True" />
+                    </Enumerations>
+                </Bit>
+            </BitField>
+        </Field>
+        <Field name="Status">
+            <InformativeText>
+                <Abstract>
+                    Device status descriptor.
+                </Abstract>
+                <InformativeDisclaimer>
+                    This fiel is yet to be fully decoded, however, following states are known.
+                </InformativeDisclaimer>
+            </InformativeText>
+            <Requirement>Mandatory</Requirement>
+            <Format>uint8</Format>
+            <BitField>
+                <Bit index="0" size="1" name="Motor Is Moving">
+                    <Enumerations>
+                        <Enumeration key="0" value="False" />
+                        <Enumeration key="1" value="True" />
+                    </Enumerations>
+                </Bit>
+                <Bit index="1" size="1" name="Device Ready">
+                    <Enumerations>
+                        <Enumeration key="0" value="True" />
+                        <Enumeration key="1" value="False" />
+                    </Enumerations>
+                </Bit>
+                <Bit index="2" size="1" name="Device Is Adapting">
+                    <Enumerations>
+                        <Enumeration key="0" value="False" />
+                        <Enumeration key="1" value="True" />
+                    </Enumerations>
+                </Bit>
+                <Bit index="3" size="1" name="Low Battery Indication">
+                    <Enumerations>
+                        <Enumeration key="0" value="False" />
+                        <Enumeration key="1" value="True" />
+                    </Enumerations>
+                </Bit>
+            </BitField>
+            <AdditionalValues>
+                <Enumeration key="7" value="Device Is Installing" />
+            </AdditionalValues>
+        </Field>
+        <Field name="Heating">
+            <InformativeText>
+                <Abstract>
+                    Indication of current heating program operation.
+                </Abstract>
+            </InformativeText>
+            <Requirement>Mandatory</Requirement>
+            <Format>uint8</Format>
+            <BitField>
+                <Bit index="3" size="1" name="Program Satisfied">
+                    <Enumerations>
+                        <Enumeration key="0" value="False" />
+                        <Enumeration key="1" value="True" />
+                    </Enumerations>
+                </Bit>
+            </BitField>
+        </Field>
+    </Value>
+</Characteristic>

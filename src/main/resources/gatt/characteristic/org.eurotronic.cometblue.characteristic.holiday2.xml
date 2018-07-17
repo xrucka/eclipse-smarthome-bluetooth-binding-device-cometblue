@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd" 
+                name="Holiday Heating Program #2"
+                type="org.eurotronic.cometblue.characteristic.holiday2"
+                uuid="47E9EE21" 
+                last-modified="2018-07-11" approved="no">
+    <InformativeText>
+        <Abstract>Valve heating program to deploy during holidays (slot #2)</Abstract>
+    </InformativeText>
+    <Value>
+        <Field name="Holiday Heating Program #2">
+            <InformativeText>
+                <Abstract>
+                    Heating program date range (precision: hours) and temperature: "2018-07-01T10:00 ; 2018-12-31T19:00 = 20°C"
+                </Abstract>
+                <InformativeDisclaimer>
+                    Step is 1 hour and 0.5°C.
+                </InformativeDisclaimer>
+            </InformativeText>
+            <Requirement>Mandatory</Requirement>
+            <Format>utf8s</Format>
+        </Field>
+    </Value>
+</Characteristic>

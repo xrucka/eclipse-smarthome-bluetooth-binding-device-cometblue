@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd" 
+                name="Temperature reading and settings"
+                type="org.eurotronic.cometblue.characteristic.temperatures"
+                uuid="47E9EE2B" 
+                last-modified="2018-03-04" approved="no">
+    <InformativeText>
+        <Abstract>Valve temperature and ventilation settings</Abstract>
+    </InformativeText>
+    <Value>
+        <Field name="Current temperature">
+            <InformativeText>
+                <Abstract>
+                    Represents the current room temperature read by the valve. 
+                </Abstract>
+                <InformativeDisclaimer>
+                    The temperature reading might be somewhat imprecise, as the valve itself is heated by controlled radiator.
+                    Use the correction field to adjust the temperature reading.
+                </InformativeDisclaimer>
+            </InformativeText>
+            <Requirement>Mandatory</Requirement>
+            <Format>uint8</Format>
+            <Unit>org.bluetooth.unit.thermodynamic_temperature.degree_celsius</Unit>
+            <BinaryExponent>-1</BinaryExponent>
+        </Field>
+        <Field name="Manual temperature setting">
+            <InformativeText>
+                <Abstract>
+                    Temperature to maintain with manual heating mode enabled.
+                </Abstract>
+            </InformativeText>
+            <Requirement>Mandatory</Requirement>
+            <Format>uint8</Format>
+            <Unit>org.bluetooth.unit.thermodynamic_temperature.degree_celsius</Unit>
+            <BinaryExponent>-1</BinaryExponent>
+            <Enumerations>
+                <Enumeration key="128" value="Do Not Change Temperature" />
+                <Enumeration_Range start="0" end="15" name="Off" />
+            </Enumerations>
+        </Field>
+        <Field name="Primary temperature setting">
+            <InformativeText>
+                <Abstract>
+                    Temperature to maintain during primary heating phase (i.e. daytime).
+                </Abstract>
+            </InformativeText>
+            <Requirement>Mandatory</Requirement>
+            <Format>uint8</Format>
+            <Unit>org.bluetooth.unit.thermodynamic_temperature.degree_celsius</Unit>
+            <BinaryExponent>-1</BinaryExponent>
+            <Enumerations>
+                <Enumeration key="128" value="Do Not Change Temperature" />
+                <Enumeration_Range start="0" end="15" name="Off" />
+            </Enumerations>
+        </Field>
+        <Field name="Secondary temperature setting">
+            <InformativeText>
+                <Abstract>
+                    Temperature to maintain during secondary heating phase (i.e. nighttime).
+                </Abstract>
+            </InformativeText>
+            <Requirement>Mandatory</Requirement>
+            <Format>uint8</Format>
+            <Unit>org.bluetooth.unit.thermodynamic_temperature.degree_celsius</Unit>
+            <BinaryExponent>-1</BinaryExponent>
+            <Enumerations>
+                <Enumeration key="128" value="Do Not Change Temperature" />
+                <Enumeration_Range start="0" end="15" name="Off" />
+            </Enumerations>
+        </Field>
+        <Field name="Temperature correction">
+            <InformativeText>
+                <Abstract>
+                    Corection deployed for temperature measurements.
+                </Abstract>
+            </InformativeText>
+            <Requirement>Mandatory</Requirement>
+            <Format>uint8</Format>
+            <Unit>org.bluetooth.unit.thermodynamic_temperature.degree_celsius</Unit>
+            <BinaryExponent>-1</BinaryExponent>
+            <Minimum>-5</Minimum>
+            <Maximum>5</Maximum>
+        </Field>
+        <Field name="Open window sensitivity">
+            <InformativeText>
+                <Abstract>
+                    Controls the sensitivity on open window. This closes the valve for some time when performing ventilation, thus save on energies.
+                </Abstract>
+                <InformativeDisclaimer>
+                    This field is somewhat strange, it seems to have many more settings, yet theese are the ones used by the official application.
+                </InformativeDisclaimer>
+            </InformativeText>
+            <Requirement>Mandatory</Requirement>
+            <Format>uint8</Format>
+            <Unit>org.bluetooth.unit.unitless</Unit>
+            <Enumerations>
+                <Enumeration key="1" value="Low sensitivity" />
+                <Enumeration key="4" value="High sensitivity" />
+                <Enumeration key="8" value="Mid sensitivity" />
+            </Enumerations>
+        </Field>
+        <Field name="Open window timeout">
+            <InformativeText>
+                <Abstract>
+                    Controls the duration of automated valve closing during ventilation. After the timeout, the heating is turned on again.
+                </Abstract>
+            </InformativeText>
+            <Requirement>Mandatory</Requirement>
+            <Format>uint8</Format>
+            <Unit>org.bluetooth.unit.time.minute</Unit>
+            <Minimum>0</Minimum>
+        </Field>
+    </Value>
+</Characteristic>

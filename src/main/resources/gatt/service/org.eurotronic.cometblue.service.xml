@@ -1,0 +1,106 @@
+<Service xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/service.xsd"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Eurotronic CometBlue programmable radiator valve controller programming service"
+         type="org.eurotronic.cometblue.service" uuid="47E9EE00" last-modified="2018-02-01">
+<InformativeText>
+    <Abstract>
+        Eurotronic CometBlue programmable radiator valve controller
+    </Abstract>
+    <Summary>
+        Service controlling Eurotronic's CometBlue programmable radiator valve controller.
+        Available also under Lidl's private brand as Silvercrest RT 2000 BT
+    </Summary>
+</InformativeText>
+<Dependencies>
+    <Dependency>This service has no dependencies on other GATT-based services.</Dependency>
+</Dependencies>
+<GATTRequirements>
+    <Requirement subProcedure="Write Characteristic Value">Mandatory</Requirement>
+    <Requirement subProcedure="Read Characteristic Value">Mandatory</Requirement>
+    <Requirement subProcedure="Read Characteristic Descriptors">Mandatory</Requirement>
+    <Requirement subProcedure="Write Characteristic Descriptors">Mandatory</Requirement>
+    <!--<Requirement subProcedure="Notification">Mandatory</Requirement>-->
+</GATTRequirements>
+<Transports>
+    <Classic>false</Classic>
+    <LowEnergy>true</LowEnergy>
+</Transports>
+<ErrorCodes>
+    <ErrorCode name="Read access denied" code="0x02" Description="The device is locked, needs to be unlocked with pin write first."/>
+    <ErrorCode name="Write access denied" code="0x03" Description="The device is locked, perhaps incorrect pin?"/>
+</ErrorCodes>
+<Characteristics>
+    <Characteristic name="Battery Level"
+                    type="org.eurotronic.cometblue.characteristic.battery_level">
+        <InformativeText>
+            Battery charge percents
+        </InformativeText>
+        <Requirement>Mandatory</Requirement>
+        <Properties>
+            <Read>Mandatory</Read>
+            <Write>Excluded</Write>
+            <WriteWithoutResponse>Excluded</WriteWithoutResponse>
+            <SignedWrite>Excluded</SignedWrite>
+            <ReliableWrite>Excluded</ReliableWrite>
+            <Notify>Excluded</Notify>
+            <Indicate>Excluded</Indicate>
+            <WritableAuxiliaries>Excluded</WritableAuxiliaries>
+            <Broadcast>Excluded</Broadcast>
+        </Properties>
+    </Characteristic>
+    <Characteristic name="Pin Code"
+                    type="org.eurotronic.cometblue.characteristic.pin_code">
+        <InformativeText>
+            Device "pin", first write attempts to unlock the device. If successfull, second write changes the pin.
+        </InformativeText>
+        <Requirement>Mandatory</Requirement>
+        <Properties>
+            <Read>Mandatory</Read>
+            <Write>Mandatory</Write>
+            <WriteWithoutResponse>Excluded</WriteWithoutResponse>
+            <SignedWrite>Excluded</SignedWrite>
+            <ReliableWrite>Excluded</ReliableWrite>
+            <Notify>Excluded</Notify>
+            <Indicate>Excluded</Indicate>
+            <WritableAuxiliaries>Excluded</WritableAuxiliaries>
+            <Broadcast>Excluded</Broadcast>
+        </Properties>
+    </Characteristic>
+    <Characteristic name="Date and Time"
+                    type="org.eurotronic.cometblue.characteristic.datetime">
+        <InformativeText>
+            Device internal date and time setting.
+        </InformativeText>
+        <Requirement>Mandatory</Requirement>
+        <Properties>
+            <Read>Mandatory</Read>
+            <Write>Mandatory</Write>
+            <WriteWithoutResponse>Excluded</WriteWithoutResponse>
+            <SignedWrite>Excluded</SignedWrite>
+            <ReliableWrite>Excluded</ReliableWrite>
+            <Notify>Excluded</Notify>
+            <Indicate>Excluded</Indicate>
+            <WritableAuxiliaries>Excluded</WritableAuxiliaries>
+            <Broadcast>Excluded</Broadcast>
+        </Properties>
+    </Characteristic>
+    <Characteristic name="Temperature reading and settings"
+                    type="org.eurotronic.cometblue.characteristic.temperatures">
+        <InformativeText>
+            
+        </InformativeText>
+        <Requirement>Mandatory</Requirement>
+        <Properties>
+            <Read>Mandatory</Read>
+            <Write>Mandatory</Write>
+            <WriteWithoutResponse>Excluded</WriteWithoutResponse>
+            <SignedWrite>Excluded</SignedWrite>
+            <ReliableWrite>Excluded</ReliableWrite>
+            <Notify>Excluded</Notify>
+            <Indicate>Excluded</Indicate>
+            <WritableAuxiliaries>Excluded</WritableAuxiliaries>
+            <Broadcast>Excluded</Broadcast>
+        </Properties>
+    </Characteristic>
+</Characteristics>
+</Service>
+

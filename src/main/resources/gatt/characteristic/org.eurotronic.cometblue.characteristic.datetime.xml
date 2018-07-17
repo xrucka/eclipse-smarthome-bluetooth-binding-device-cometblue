@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd" 
+                name="Date and Time"
+                type="org.eurotronic.cometblue.characteristic.datetime"
+                uuid="47E9EE01" 
+                last-modified="2018-02-01" approved="no">
+    <InformativeText>
+        <Abstract>Internal device clock time. Used for programmed temperatures.</Abstract>
+    </InformativeText>
+    <Value>
+        <Field name="Device Date and Time">
+            <InformativeText></InformativeText>
+            <Requirement>Mandatory</Requirement>
+            <Format>utf8s</Format>
+        </Field>
+    </Value>
+</Characteristic>

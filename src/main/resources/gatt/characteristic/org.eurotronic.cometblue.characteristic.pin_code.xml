@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd" 
+                name="Pin code"
+                type="org.eurotronic.cometblue.characteristic.pin_code"
+                uuid="47E9EE30" 
+                last-modified="2018-02-01" approved="no">
+    <InformativeText>
+        <Abstract>
+            Pin code for unlocking the device.
+        </Abstract>
+    </InformativeText>
+    <Value>
+        <Field name="Pin code">
+            <InformativeText>
+                <InformativeDisclaimer>
+                    Pin is required to be written to device before accessing protected attributes.
+                    First write performs authentication, but beware of second write - it overwrites the pin.
+                </InformativeDisclaimer>
+            </InformativeText>
+            <Requirement>Mandatory</Requirement>
+            <Format>uint32</Format>
+        </Field>
+    </Value>
+</Characteristic>

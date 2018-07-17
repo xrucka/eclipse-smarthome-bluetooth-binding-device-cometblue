@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd" 
+                name="Battery Level"
+                type="org.eurotronic.cometblue.characteristic.battery_level"
+                uuid="47E9EE2C" 
+                last-modified="2018-02-01" approved="no">
+    <InformativeText>
+        <Abstract>
+            The current charge level of a battery. 100% represents fully charged while 0% represents fully discharged.
+        </Abstract>
+    </InformativeText>
+    <Value>
+        <Field name="Level">
+            <Requirement>Mandatory</Requirement>
+            <Format>uint8</Format>
+            <Unit>org.bluetooth.unit.percentage</Unit>
+            <Minimum>0</Minimum>
+            <Maximum>100</Maximum>
+            <Enumerations>
+                <Reserved start="101" end="255" />
+            </Enumerations>
+        </Field>
+    </Value>
+</Characteristic>

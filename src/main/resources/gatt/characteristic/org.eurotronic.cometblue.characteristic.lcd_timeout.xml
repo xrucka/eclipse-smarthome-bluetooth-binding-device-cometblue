@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd" 
+                name="LCD Timeout"
+                type="org.eurotronic.cometblue.characteristic.lcd_timeout"
+                uuid="47E9EE2E" 
+                last-modified="2018-02-01" approved="no">
+    <InformativeText>
+        <Abstract></Abstract>
+    </InformativeText>
+    <Value>
+        <Field name="LCD Timeout Preset">
+            <InformativeText></InformativeText>
+            <Requirement>Mandatory</Requirement>
+            <Format>uint8</Format>
+            <Unit>org.bluetooth.unit.time.second</Unit>
+            <AdditionalValues>
+                <Enumeration start="128" end="255" value="Permanent on" />
+            </AdditionalValues>
+        </Field>
+        <Field name="Remaining LCD Timeout">
+            <InformativeText></InformativeText>
+            <Requirement>Mandatory</Requirement>
+            <Format>uint8</Format>
+            <Unit>org.bluetooth.unit.time.second</Unit>
+        </Field>
+    </Value>
+</Characteristic>
